@@ -13,12 +13,12 @@ public class CCuenta {
     /**
      * @return the nombre
      */
-    public String getNombre() {
+    public String getNombre() {       
         return nombre;
     }
 
     /**
-     * @param nombre the nombre to set
+     * @param nombre setter creado
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -32,7 +32,7 @@ public class CCuenta {
     }
 
     /**
-     * @param cuenta the cuenta to set
+     * @param cuenta setter creado
      */
     public void setCuenta(String cuenta) {
         this.cuenta = cuenta;
@@ -46,7 +46,7 @@ public class CCuenta {
     }
 
     /**
-     * @param saldo the saldo to set
+     * @param saldo setter creado
      */
     public void setSaldo(double saldo) {
         this.saldo = saldo;
@@ -60,41 +60,69 @@ public class CCuenta {
     }
 
     /**
-     * @param tipoInterés the tipoInterés to set
+     * @param tipoInterés Setter creado
      */
     public void setTipoInterés(double tipoInterés) {
         this.tipoInterés = tipoInterés;
     }
 
-
+    /**
+     * @param nombre declarado
+     * @param cuenta declarado
+     * @param saldo declarado
+     * @param tipoInterés declarado
+     */
     private String nombre;
     private String cuenta;
     private double saldo;
     private double tipoInterés;
 
+    /**
+     *
+     */
     public CCuenta()
     {
     }
 
+    /**
+     * @param nom como atributo de CCuenta
+     * @param cue como atributo de CCuenta
+     * @param sal como atributo de CCuenta
+     * @param tipo como atributo de CCuenta
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
+        /**
+        * @param nombre se le atribuye el valor del atributo nom
+        * @param cuenta se le atribuye el valor del atributo cue
+        * @param saldo se le atribuye el valor del atributo sal
+        */
         nombre =nom;
         cuenta=cue;
         saldo=sal;
     }
-
+    /**
+     * @return the Saldo
+     */
     public double estado()
     {
         return getSaldo();
     }
-
+    /**
+     * @param cantidad como atributo de ingresar
+     * @throws Exception en caso de que cantidad sea una cifra negativa
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
             throw new Exception("No se puede ingresar una cantidad negativa");
         setSaldo(getSaldo() + cantidad);
     }
-
+    
+    /**
+     * @param cantidad como atributo de retirar
+     * @throws Exception en el caso de que la cantidad sea una cifra negativa o no haya suficiente saldo
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
